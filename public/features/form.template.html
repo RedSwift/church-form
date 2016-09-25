@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<div class="container margin-btm">
+  <h1>Membership Form</h1>
+  <form>
+    <div class="row">
+      <div class="form-group col-md-6">
+        <label for="membership">Membership No</label>
+        <input type="text" ng-model="$ctrl.membership" class="form-control">
+      </div>
+
+      <div class="form-group col-md-6">
+        <label for="date">Date</label>
+        <input type="text" ng-model="$ctrl.date" class="form-control">
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="form-group col-md-6">
+        <label for="chiName">Name (Chinese)</label>
+        <input type="text" ng-model="$ctrl.chiName" class="form-control">
+      </div>
+
+      <div class="form-group col-md-6">
+        <label for="icNo">Ic No</label>
+        <input type="text" ng-model="$ctrl.icNo" class="form-control">
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="form-group col-md-6">
+        <label for="engName">Name (English)</label>
+        <input type="text" ng-model="$ctrl.engName" class="form-control">
+      </div>
+
+      <div class="form-group col-md-6">
+        <label for="DOB">Date Of Birth</label>
+        <input type="text" ng-model="$ctrl.dob" class="form-control">
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="form-group col-md-4">
+        <label for="gender">Gender</label>
+        <select class="form-control" ng-model="$ctrl.gender">
+          <option value="">Select Gender</option>
+          <option value="male">Male</option>
+          <option value="female">Female</option>
+        </select>
+      </div>
+
+      <div class="form-group col-md-4">
+        <label for="bloodType">Blood Type</label>
+        <input type="text" ng-model="$ctrl.bloodType" class="form-control">
+      </div>
+
+      <div class="form-group col-md-4">
+        <label for="nationality">Nationality</label>
+        <input type="text" ng-model="$ctrl.nationality" class="form-control">
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="email">Email</label>
+      <input type="text" ng-model="$ctrl.email" class="form-control">
+    </div>
+
+    <div class="row">
+      <div class="form-group col-md-10">
+        <label for="address">Address</label>
+        <input type="text" ng-model="$ctrl.address" class="form-control">
+      </div>
+
+      <div class="form-group col-md-2">
+        <label for="postal">Postal</label>
+        <input type="text" ng-model="$ctrl.postal" class="form-control">
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="form-group col-md-4">
+        <label for="housePhone">Phone (House)</label>
+        <input type="text" ng-model="$ctrl.housePhone" class="form-control">
+      </div>
+
+      <div class="form-group col-md-4">
+        <label for="officePhone">Phone (Office)</label>
+        <input type="text" ng-model="$ctrl.officePhone" class="form-control">
+      </div>
+
+      <div class="form-group col-md-4">
+        <label for="mobilePhone">Phone (Mobile)</label>
+        <input type="text" ng-model="$ctrl.mobilePhone" class="form-control">
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="form-group col-md-3">
+        <label for="marriage">Marriage Status</label>
+        <select class="form-control" ng-model="$ctrl.marriage">
+          <option value="">Select Status</option>
+          <option value="married">Married</option>
+          <option value="unmarried">Unmarried</option>
+          <option value="widow">Widow</option>
+          <option value="divorced">Divorced</option>
+        </select>
+      </div>
+
+      <div class="form-group col-md-6">
+        <label for="spouseName">Spouse's Name</label>
+        <input type="text" ng-model="$ctrl.spouseName" class="form-control">
+      </div>
+
+      <div class="form-group col-md-3">
+        <label for="spouseFaith">Spouse's Faith</label>
+        <input type="text" ng-model="$ctrl.spouseFaith" class="form-control" placeholder="e.g. Christian">
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="form-group col-md-4">
+        <label for="familyMembers">No of Family Numbers</label>
+        <input type="text" ng-model="$ctrl.familyMembers" class="form-control" placeholder="How many siblings? (Including yourself)">
+      </div>
+
+      <div class="form-group col-md-4">
+        <label for="siblingsRanking">Ranking amongst siblings</label>
+        <input type="text" ng-model="$ctrl.siblingsRanking" class="form-control">
+      </div>
+
+      <div class="form-group col-md-4">
+        <label for="noOfChildren">Number of Children</label>
+        <input type="number" ng-model="$ctrl.noOfChildren" class="form-control">
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="form-group col-md-6">
+        <label for="occupation">Occupation</label>
+        <input type="text" ng-model="$ctrl.occupation" class="form-control">
+      </div>
+
+      <div class="form-group col-md-6">
+        <label for="familyReligion">Christian Family?</label>
+        <select ng-model="$ctrl.familyReligion" class="form-control">
+          <option value="">Select Option</option>
+          <option value="yes">Yes</option>
+          <option value="no">No</option>
+        </select>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="education">Highest Education</label>
+      <select ng-model="$ctrl.education" class="form-control">
+        <option value="">Select Option</option>
+        <option value="yes">Primary School</option>
+        <option value="no">Secondary School</option>
+        <option value="tertiary">Tertiary Level</option>
+        <option value="University">University</option>
+      </select>
+    </div>
+
+    <div class="row">
+      <div class="form-group col-md-2">
+        <label for="baptismDate">Baptism Date</label>
+        <input type="text" ng-model="$ctrl.baptismDate" class="form-control">
+      </div>
+
+      <div class="form-group col-md-5">
+        <label for="baptismChurch">Baptism Church</label>
+        <input type="text" ng-model="$ctrl.baptismChurch" class="form-control">
+      </div>
+
+      <div class="form-group col-md-5">
+        <label for="baptismPastor">Baptism Pastor</label>
+        <input type="text" ng-model="$ctrl.baptismPastor" class="form-control">
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="form-group col-md-2">
+        <label for="transferDate">Transfer Date</label>
+        <input type="text" ng-model="$ctrl.transferDate" class="form-control">
+      </div>
+
+      <div class="form-group col-md-5">
+        <label for="transferredFrom">Transferred From</label>
+        <input type="text" ng-model="$ctrl.transferredFrom" class="form-control">
+      </div>
+
+      <div class="form-group col-md-5">
+        <label for="transferPastor">Previous Church Pastor</label>
+        <input type="text" ng-model="$ctrl.transferPastor" class="form-control">
+      </div>
+    </div>
+
+    <input type="button" value="Submit" class="btn btn-primary pull-right" ng-click="$ctrl.submitForm()">
+  </form>
+</div>
