@@ -5,6 +5,7 @@ const morgan = require('morgan')
 const mongoose = require('mongoose')
 const bodyParser = require('body-parser')
 require('dotenv').config()
+const detailCtrl = require('./server/controllers/detail_controller')
 
 mongoose.connect(process.env.MONGODB_URI)
 
@@ -26,3 +27,5 @@ app.listen(port, () => {
 app.get('/', (req, res) => {
   res.sendFile('index.html')
 })
+
+app.post('/api/new', detailCtrl.newDetail)
