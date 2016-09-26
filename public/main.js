@@ -4,5 +4,7 @@ angular.module('churchForm', ['ngRoute'])
     .when('/', {
       template: '<full-form></full-form>'
     })
-    $locationProvider.html5Mode(true)
+    .when('/new', {
+      template: '<h1>This is new</h1>'
+    })
   })

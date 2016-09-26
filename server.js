@@ -23,3 +23,6 @@ app.listen(port, () => {
 })
 
 // routes
+app.get('/', (req, res) => {
+  res.sendFile('index.html')
+})
