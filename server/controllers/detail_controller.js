@@ -1,3 +1,4 @@
+'use strict'
 const Detail = require('../models/detail')
 
 let newDetail = (req, res) => {
