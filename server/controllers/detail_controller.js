@@ -1,6 +1,13 @@
 'use strict'
 const Detail = require('../models/detail')
 
+let getDetail = (req, res) => {
+  Detail.find({}, (err, details) => {
+    if (err) return res.status(401).json({error: err})
+    else res.status(200).json(details)
+  })
+}
+
 let newDetail = (req, res) => {
   var createDetail = new Detail()
 
@@ -42,5 +49,6 @@ let newDetail = (req, res) => {
 }
 
 module.exports = {
-  newDetail: newDetail
+  newDetail: newDetail,
+  getDetail: getDetail
 }
