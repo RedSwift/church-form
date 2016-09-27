@@ -6,7 +6,7 @@ const port = process.env.PORT || 3000
 const morgan = require('morgan')
 const mongoose = require('mongoose')
 const bodyParser = require('body-parser')
-require('dotenv').config()
+// require('dotenv').config()
 const detailCtrl = require('./server/controllers/detail_controller')
 
 mongoose.connect(process.env.MONGODB_URI)
