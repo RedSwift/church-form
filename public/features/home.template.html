@@ -1,2 +1,22 @@
 <!DOCTYPE html>
-<a href="/#/new">New</a>
+
+<div class="container">
+  <h1>
+    Home Page
+    <button class="btn btn-primary btn-lg pull-right">
+      New
+      <a href="/#/new"></a>
+    </button>
+  </h1>
+
+  <table class="table">
+    <th>MembershipNo</th>
+    <th>Chinese Name</th>
+    <th>Email</th>
+    <tbody ng-repeat="detail in $ctrl.details track by $index">
+      <td>{{detail.membershipNo}}</td>
+      <td>{{detail.chiName}}</td>
+      <td>{{detail.email}}</td>
+    </tbody>
+  </table>
+</div>
