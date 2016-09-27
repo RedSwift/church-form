@@ -5,7 +5,7 @@ angular.module('churchForm')
     controller: function ($http) {
       var ctrl = this
       $http.get('/api/details')
-        .then((res) => {
+        .then(function (res) {
           ctrl.details = res.data
         })
     }
