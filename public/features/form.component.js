@@ -2,7 +2,7 @@
 angular.module('churchForm')
   .component('fullForm', {
     templateUrl: 'features/form.template.html',
-    controller: function ($http) {
+    controller: function ($http, $window) {
       var ctrl = this
       this.submitForm = function () {
         $http({
@@ -41,7 +41,7 @@ angular.module('churchForm')
             transferPastor: ctrl.transferPastor
           }
         }).then(function (res) {
-          alert('Save Successful!')
+          $window.location.href = '/#/'
         }, function (err) {
           alert('Save failed!', err)
         })

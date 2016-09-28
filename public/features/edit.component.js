@@ -3,7 +3,7 @@
 angular.module('churchForm')
   .component('editDetails', {
     templateUrl: 'features/edit.template.html',
-    controller: function ($http, $routeParams) {
+    controller: function ($http, $routeParams, $window) {
       var ctrl = this
       $http.get('/api/' + $routeParams.id)
         .then(function (res) {
@@ -76,6 +76,8 @@ angular.module('churchForm')
             transferredFrom: ctrl.transferredFrom,
             transferPastor: ctrl.transferPastor
           }
+        }).then(function () {
+          $window.location.href = '/#/'
         })
       }
     }

@@ -2,7 +2,7 @@
 angular.module('churchForm')
   .component('home', {
     templateUrl: 'features/home.template.html',
-    controller: function ($http) {
+    controller: function ($http, $window) {
       var ctrl = this
       $http.get('/api/details')
         .then(function (res) {
@@ -10,8 +10,10 @@ angular.module('churchForm')
         })
         
       ctrl.delete = function (id) {
-        console.log('clicked', id)
         $http.delete('/api/' + id)
+          .then(function () {
+            $window.location.reload()
+          })
       }
     }
   })

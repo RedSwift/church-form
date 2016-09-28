@@ -8,7 +8,6 @@ angular.module('churchForm')
       $http.get('/api/' + $routeParams.id)
         .then(function (res) {
           ctrl.detail = res.data
-          console.log(res.data)
         })
     }
   })
