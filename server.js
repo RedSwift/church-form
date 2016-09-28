@@ -32,3 +32,4 @@ app.get('/', (req, res) => {
 
 app.post('/api/new', detailCtrl.newDetail)
 app.get('/api/details', detailCtrl.getDetail)
+app.get('/api/:id', detailCtrl.showDetail)

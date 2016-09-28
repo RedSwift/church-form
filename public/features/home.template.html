@@ -13,10 +13,20 @@
     <th>MembershipNo</th>
     <th>Chinese Name</th>
     <th>Email</th>
+    <th>Actions</th>
     <tbody ng-repeat="detail in $ctrl.details track by $index">
-      <td>{{detail.membershipNo}}</td>
-      <td>{{detail.chiName}}</td>
-      <td>{{detail.email}}</td>
+      <tr>
+        <td>{{detail.membershipNo}}</td>
+        <td><a href="/#/{{detail._id}}">{{detail.chiName}}</a></td>
+        <td>{{detail.email}}</td>
+        <td>
+          <a ng-href="/#/edit/{{detail._id}}">
+            <button class="btn btn-primary">Edit</button>
+          </a>
+
+          <button class="btn btn-danger" ng-click="$ctrl.delete()">Delete</button>
+        </td>
+      </tr>
     </tbody>
   </table>
 </div>

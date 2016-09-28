@@ -8,6 +8,12 @@ let getDetail = (req, res) => {
   })
 }
 
+let showDetail = (req, res) => {
+  Detail.findOne({_id: req.params.id}, (err, result) => {
+    return err ? res.status(401).json({errorr: err}) : res.status(200).json(result)
+  })
+}
+
 let newDetail = (req, res) => {
   var createDetail = new Detail()
 
@@ -50,5 +56,6 @@ let newDetail = (req, res) => {
 
 module.exports = {
   newDetail: newDetail,
-  getDetail: getDetail
+  getDetail: getDetail,
+  showDetail: showDetail
 }
