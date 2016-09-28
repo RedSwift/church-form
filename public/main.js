@@ -7,4 +7,7 @@ angular.module('churchForm', ['ngRoute'])
     .when('/new', {
       template: '<full-form></full-form>'
     })
+    .when('/:id', {
+      template: '<show-detail></show-detail>'
+    })
   })

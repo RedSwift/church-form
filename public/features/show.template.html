@@ -1,204 +1,181 @@
 <!DOCTYPE html>
+<!DOCTYPE html>
 <div class="container margin-btm">
   <div class="row">
     <a class="col-md-1" href="/#/">
       <button class="btn btn-primary btn-lg">Back</button>
     </a>
-    <h1 class="col-md-11">Membership Form</h1>
+    <h1 class="col-md-11">{{$ctrl.detail.chiName}}</h1>
   </div>
-  <form>
     <div class="row">
       <div class="form-group col-md-6">
         <label for="membershipNo">Membership No</label>
-        <input type="text" ng-model="$ctrl.membershipNo" class="form-control">
+        <h5>{{$ctrl.detail.membershipNo}}</h5>
       </div>
 
       <div class="form-group col-md-6">
         <label for="date">Date</label>
-        <input type="text" ng-model="$ctrl.date" class="form-control">
+        <h3>{{$ctrl.detail.date}}</h3>
       </div>
     </div>
 
     <div class="row">
       <div class="form-group col-md-6">
         <label for="chiName">Name (Chinese)</label>
-        <input type="text" ng-model="$ctrl.chiName" class="form-control">
+        <h5>{{$ctrl.detail.chiName}}</h5>
       </div>
 
       <div class="form-group col-md-6">
         <label for="icNo">Ic No</label>
-        <input type="text" ng-model="$ctrl.icNo" class="form-control">
+        <h5>{{$ctrl.detail.icNo}}</h5>
       </div>
     </div>
 
     <div class="row">
       <div class="form-group col-md-6">
         <label for="engName">Name (English)</label>
-        <input type="text" ng-model="$ctrl.engName" class="form-control">
+        <h5>{{$ctrl.detail.engName}}</h5>
       </div>
 
       <div class="form-group col-md-6">
         <label for="DOB">Date Of Birth</label>
-        <input type="text" ng-model="$ctrl.dob" class="form-control">
+        <h5>{{$ctrl.detail.dob}}</h5>
       </div>
     </div>
 
     <div class="row">
       <div class="form-group col-md-4">
         <label for="gender">Gender</label>
-        <select class="form-control" ng-model="$ctrl.gender">
-          <option value="">Select Gender</option>
-          <option value="Male">Male</option>
-          <option value="Female">Female</option>
-        </select>
+        <h5>{{$ctrl.detail.gender}}</h5>
       </div>
 
       <div class="form-group col-md-4">
         <label for="bloodType">Blood Type</label>
-        <input type="text" ng-model="$ctrl.bloodType" class="form-control">
+        <h5>{{$ctrl.detail.bloodType}}</h5>
       </div>
 
       <div class="form-group col-md-4">
         <label for="nationality">Nationality</label>
-        <input type="text" ng-model="$ctrl.nationality" class="form-control">
+        <h5>{{$ctrl.detail.nationality}}</h5>
       </div>
     </div>
 
     <div class="form-group">
       <label for="email">Email</label>
-      <input type="text" ng-model="$ctrl.email" class="form-control">
+      <h5>{{$ctrl.detail.email}}</h5>
     </div>
 
     <div class="row">
       <div class="form-group col-md-10">
         <label for="address">Address</label>
-        <input type="text" ng-model="$ctrl.address" class="form-control">
+        <h5>{{$ctrl.detail.address}}</h5>
       </div>
 
       <div class="form-group col-md-2">
         <label for="postal">Postal</label>
-        <input type="text" ng-model="$ctrl.postal" class="form-control">
+        <h5>{{$ctrl.detail.postal}}</h5>
       </div>
     </div>
 
     <div class="row">
       <div class="form-group col-md-4">
         <label for="housePhone">Phone (House)</label>
-        <input type="text" ng-model="$ctrl.housePhone" class="form-control">
+        <h5>{{$ctrl.detail.housePhone}}</h5>
       </div>
 
       <div class="form-group col-md-4">
         <label for="officePhone">Phone (Office)</label>
-        <input type="text" ng-model="$ctrl.officePhone" class="form-control">
+        <h5>{{$ctrl.detail.officePhone}}</h5>
       </div>
 
       <div class="form-group col-md-4">
         <label for="mobilePhone">Phone (Mobile)</label>
-        <input type="text" ng-model="$ctrl.mobilePhone" class="form-control">
+        <h5>{{$ctrl.detail.mobilePhone}}</h5>
       </div>
     </div>
 
     <div class="row">
       <div class="form-group col-md-3">
         <label for="marriage">Marriage Status</label>
-        <select class="form-control" ng-model="$ctrl.marriage">
-          <option value="">Select Status</option>
-          <option value="Married">Married</option>
-          <option value="Single">Unmarried</option>
-          <option value="Widow">Widow</option>
-          <option value="Divorced">Divorced</option>
-        </select>
+        <h5>{{$ctrl.detail.marriage}}</h5>
       </div>
 
       <div class="form-group col-md-6">
         <label for="spouseName">Spouse's Name</label>
-        <input type="text" ng-model="$ctrl.spouseName" class="form-control">
+        <h5>{{$ctrl.detail.spouseName}}</h5>
       </div>
 
       <div class="form-group col-md-3">
         <label for="spouseFaith">Spouse's Faith</label>
-        <input type="text" ng-model="$ctrl.spouseFaith" class="form-control" placeholder="e.g. Christian">
+        <h5>{{$ctrl.detail.spouseFaith}}</h5>
       </div>
     </div>
 
     <div class="row">
       <div class="form-group col-md-4">
         <label for="familyMembers">No of Family Numbers</label>
-        <input type="text" ng-model="$ctrl.familyMembers" class="form-control" placeholder="How many siblings? (Including yourself)">
+        <h5>{{$ctrl.detail.familyMembers}}</h5>
       </div>
 
       <div class="form-group col-md-4">
         <label for="siblingsRanking">Ranking amongst siblings</label>
-        <input type="text" ng-model="$ctrl.siblingsRanking" class="form-control">
+        <h5>{{$ctrl.detail.siblingsRanking}}</h5>
       </div>
 
       <div class="form-group col-md-4">
         <label for="noOfChildren">Number of Children</label>
-        <input type="number" ng-model="$ctrl.noOfChildren" class="form-control">
+        <h5>{{$ctrl.detail.noOfChildren}}</h5>
       </div>
     </div>
 
     <div class="row">
       <div class="form-group col-md-6">
         <label for="occupation">Occupation</label>
-        <input type="text" ng-model="$ctrl.occupation" class="form-control">
+        <h5>{{$ctrl.detail.occupation}}</h5>
       </div>
 
       <div class="form-group col-md-6">
         <label for="familyReligion">Christian Family?</label>
-        <select ng-model="$ctrl.familyReligion" class="form-control">
-          <option value="">Select Option</option>
-          <option value="Yes">Yes</option>
-          <option value="No">No</option>
-        </select>
+        <h5>{{$ctrl.detail.familyReligion}}</h5>
       </div>
     </div>
 
     <div class="form-group">
       <label for="education">Highest Education</label>
-      <select ng-model="$ctrl.education" class="form-control">
-        <option value="">Select Option</option>
-        <option value="yes">Primary School</option>
-        <option value="no">Secondary School</option>
-        <option value="tertiary">Tertiary Level</option>
-        <option value="University">University</option>
-      </select>
+      <h5>{{$ctrl.detail.education}}</h5>
     </div>
 
     <div class="row">
       <div class="form-group col-md-2">
         <label for="baptismDate">Baptism Date</label>
-        <input type="text" ng-model="$ctrl.baptismDate" class="form-control">
+        <h5>{{$ctrl.detail.baptismDate}}</h5>
       </div>
 
       <div class="form-group col-md-5">
         <label for="baptismChurch">Baptism Church</label>
-        <input type="text" ng-model="$ctrl.baptismChurch" class="form-control">
+        <h5>{{$ctrl.detail.baptismChurch}}</h5>
       </div>
 
       <div class="form-group col-md-5">
         <label for="baptismPastor">Baptism Pastor</label>
-        <input type="text" ng-model="$ctrl.baptismPastor" class="form-control">
+        <h5>{{$ctrl.detail.baptismPastor}}</h5>
       </div>
     </div>
 
     <div class="row">
       <div class="form-group col-md-2">
         <label for="transferDate">Transfer Date</label>
-        <input type="text" ng-model="$ctrl.transferDate" class="form-control">
+        <h5>{{$ctrl.detail.transferDate}}</h5>
       </div>
 
       <div class="form-group col-md-5">
         <label for="transferredFrom">Transferred From</label>
-        <input type="text" ng-model="$ctrl.transferredFrom" class="form-control">
+        <h5>{{$ctrl.detail.transferredFrom}}</h5>
       </div>
 
       <div class="form-group col-md-5">
         <label for="transferPastor">Previous Church Pastor</label>
-        <input type="text" ng-model="$ctrl.transferPastor" class="form-control">
+        <h5>{{$ctrl.detail.transferPastor}}</h5>
       </div>
     </div>
-
-    <input type="button" value="Submit" class="btn btn-primary btn-lg pull-right" ng-click="$ctrl.submitForm()">
-  </form>
 </div>
