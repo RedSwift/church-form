@@ -97,9 +97,16 @@ let newDetail = (req, res) => {
   })
 }
 
+let deleteDetail = (req, res) => {
+  Detail.remove({_id: req.params.id}, (err) => {
+    return err ? res.status(401).json({error: err}) : res.status(201).json({message: 'Delete Successful!'})
+  })
+}
+
 module.exports = {
   newDetail: newDetail,
   getDetail: getDetail,
   showDetail: showDetail,
-  editDetail: editDetail
+  editDetail: editDetail,
+  deleteDetail: deleteDetail
 }

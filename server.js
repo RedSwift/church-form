@@ -34,4 +34,5 @@ app.post('/api/new', detailCtrl.newDetail)
 app.get('/api/details', detailCtrl.getDetail)
 app.get('/api/:id', detailCtrl.showDetail)
 app.put('/api/edit/:id', detailCtrl.editDetail)
+app.delete('/api/:id', detailCtrl.deleteDetail)
 
