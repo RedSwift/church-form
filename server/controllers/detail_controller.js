@@ -14,6 +14,49 @@ let showDetail = (req, res) => {
   })
 }
 
+let editDetail = (req, res) => {
+  Detail.findOne({_id: req.params.id}, (err, result) => {
+    if (err) return res.status(401).json({error: err})
+    else {
+        result.membershipNo = req.body.membershipNo
+        result.date = req.body.date
+        result.chiName = req.body.chiName
+        result.icNo = req.body.icNo
+        result.engName = req.body.engName
+        result.dob = req.body.dob
+        result.gender = req.body.gender
+        result.bloodType = req.body.bloodType
+        result.nationality = req.body.nationality
+        result.email = req.body.email
+        result.address = req.body.address
+        result.postal = req.body.postal
+        result.housePhone = req.body.housePhone
+        result.officePhone = req.body.officePhone
+        result.mobilePhone = req.body.mobilePhone
+        result.marriage = req.body.marriage
+        result.spouseName = req.body.spouseName
+        result.spouseFaith = req.body.spouseFaith
+        result.familyMembers = req.body.familyMembers
+        result.siblingsRanking = req.body.siblingsRanking
+        result.noOfChildren = req.body.noOfChildren
+        result.occupation = req.body.occupation
+        result.familyReligion = req.body.familyReligion
+        result.education = req.body.education
+        result.baptismDate = req.body.baptismDate
+        result.baptismChurch = req.body.baptismChurch
+        result.baptismPastor = req.body.baptismPastor
+        result.transferDate = req.body.transferDate
+        result.transferredFrom = req.body.transferredFrom
+        result.transferPastor = req.body.transferPastor
+      
+        result.save((err, result) => {
+          if (err) return res.status(401).json({error: err})
+          else return res.status(201).json(result)
+        })
+    }
+  })
+}
+
 let newDetail = (req, res) => {
   var createDetail = new Detail()
 
@@ -57,5 +100,6 @@ let newDetail = (req, res) => {
 module.exports = {
   newDetail: newDetail,
   getDetail: getDetail,
-  showDetail: showDetail
+  showDetail: showDetail,
+  editDetail: editDetail
 }

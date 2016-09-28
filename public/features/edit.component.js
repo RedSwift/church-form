@@ -39,36 +39,46 @@ angular.module('churchForm')
           ctrl.transferredFrom = detail.transferFrom
           ctrl.transferPastor = detail.transferPastor
         })
+        
+      ctrl.editDetails = function () {
+        $http({
+          method: 'PUT',
+          url: '/api/edit/' + $routeParams.id,
+          data: {
+            membershipNo: ctrl.membershipNo,
+            date: ctrl.date,
+            chiName: ctrl.chiName,
+            icNo: ctrl.icNo,
+            engName: ctrl.engName,
+            dob: ctrl.dob,
+            gender: ctrl.gender,
+            bloodType: ctrl.bloodType,
+            nationality: ctrl.nationality,
+            email: ctrl.email,
+            address: ctrl.address,
+            postal: ctrl.postal,
+            housePhone: ctrl.housePhone,
+            officePhone: ctrl.officePhone,
+            mobilePhone: ctrl.mobilePhone,
+            marriage: ctrl.marriage,
+            spouseName: ctrl.spouseName,
+            spouseFaith: ctrl.spouseFaith,
+            familyMembers: ctrl.familyMembers,
+            siblingsRanking: ctrl.siblingsRanking,
+            noOfChildren: ctrl.noOfChildren,
+            occupation: ctrl.occupation,
+            familyReligion: ctrl.familyReligion,
+            education: ctrl.education,
+            baptismDate: ctrl.baptismDate,
+            baptismChurch: ctrl.baptismChurch,
+            baptismPastor: ctrl.baptismPastor,
+            transferDate: ctrl.transferDate,
+            transferredFrom: ctrl.transferredFrom,
+            transferPastor: ctrl.transferPastor
+          }
+        })
+      }
     }
   })
 
-  // membershipNo: ctrl.membershipNo,
-  // date: ctrl.date,
-  // chiName: ctrl.chiName,
-  // icNo: ctrl.icNo,
-  // engName: ctrl.engName,
-  // dob: ctrl.dob,
-  // gender: ctrl.gender,
-  // bloodType: ctrl.bloodType,
-  // nationality: ctrl.nationality,
-  // email: ctrl.email,
-  // address: ctrl.address,
-  // postal: ctrl.postal,
-  // housePhone: ctrl.housePhone,
-  // officePhone: ctrl.officePhone,
-  // mobilePhone: ctrl.mobilePhone,
-  // marriage: ctrl.marriage,
-  // spouseName: ctrl.spouseName,
-  // spouseFaith: ctrl.spouseFaith,
-  // familyMembers: ctrl.familyMembers,
-  // siblingsRanking: ctrl.siblingsRanking,
-  // noOfChildren: ctrl.noOfChildren,
-  // occupation: ctrl.occupation,
-  // familyReligion: ctrl.familyReligion,
-  // education: ctrl.education,
-  // baptismDate: ctrl.baptismDate,
-  // baptismChurch: ctrl.baptismChurch,
-  // baptismPastor: ctrl.baptismPastor,
-  // transferDate: ctrl.transferDate,
-  // transferredFrom: ctrl.transferredFrom,
-  // transferPastor: ctrl.transferPastor
+  

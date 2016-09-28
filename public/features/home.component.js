@@ -8,5 +8,10 @@ angular.module('churchForm')
         .then(function (res) {
           ctrl.details = res.data
         })
+        
+      ctrl.delete = function (id) {
+        console.log('clicked', id)
+        $http.delete('/api/' + id)
+      }
     }
   })
