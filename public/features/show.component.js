@@ -1,7 +1,7 @@
 /* globals angular */
 
 angular.module('churchForm')
-  .component('showDetail', {
+  .component('showDetails', {
     templateUrl: 'features/show.template.html',
     controller: function ($http, $routeParams) {
       var ctrl = this

@@ -8,6 +8,9 @@ angular.module('churchForm', ['ngRoute'])
       template: '<full-form></full-form>'
     })
     .when('/:id', {
-      template: '<show-detail></show-detail>'
+      template: '<show-details></show-details>'
+    })
+    .when('/edit/:id', {
+      template: '<edit-details></edit-details>'
     })
   })
