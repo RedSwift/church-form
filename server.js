@@ -8,6 +8,7 @@ const mongoose = require('mongoose')
 const bodyParser = require('body-parser')
 require('dotenv').config()
 const detailCtrl = require('./server/controllers/detail_controller')
+const userCtrl = require('./server/controllers/user_controller')
 
 mongoose.connect(process.env.MONGODB_URI)
 
@@ -29,6 +30,8 @@ app.listen(port, () => {
 app.get('/', (req, res) => {
   res.sendFile('index.html')
 })
+
+app.post('/api/signup', userCtrl.userSignUp)
 
 app.post('/api/new', detailCtrl.newDetail)
 app.get('/api/details', detailCtrl.getDetail)

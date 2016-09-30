@@ -1,4 +1,4 @@
-angular.module('churchForm', ['ngRoute'])
+angular.module('churchForm', ['ngRoute', 'ngMessages'])
   .config(function ($routeProvider, $locationProvider) {
     $routeProvider
     .when('/', {
