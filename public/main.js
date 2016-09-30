@@ -4,6 +4,9 @@ angular.module('churchForm', ['ngRoute', 'ngMessages'])
     .when('/', {
       template: '<home></home>'
     })
+    .when('/signup', {
+      template: '<sign-up></sign-up>'
+    })
     .when('/new', {
       template: '<full-form></full-form>'
     })
