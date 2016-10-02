@@ -32,6 +32,7 @@ app.get('/', (req, res) => {
 })
 
 app.post('/api/signup', userCtrl.userSignUp)
+app.post('/api/login', userCtrl.userLogin)
 
 app.post('/api/new', detailCtrl.newDetail)
 app.get('/api/details', detailCtrl.getDetail)
