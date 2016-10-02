@@ -1,6 +1,20 @@
 'use strict'
 const User = require('../models/user')
 
+let userLoggedIn = function (req, res, next) {
+  let userEmail = req.get('email')
+  let authToken = req.get('auth_token')
+
+  if (!userEmail || !authToken) return res.status(401).json({error: 'Unauthorized access'})
+
+  User.findOne({email: userEmail, auth_token: authToken}, (err, user) => {
+    if (err || !user) return res.status(401).json({error: 'Unauthorized access'})
+
+    req.currentUser = user
+    next()
+  })
+}
+
 let userSignUp = function (req, res) {
     if (!req.body.signUpToken || req.body.signUpToken !== process.env.SIGNUP_TOKEN) return res.status(401).json({message: 'Invalid token'})
     var makeUser = new User()
@@ -31,5 +45,6 @@ let userLogin = function (req, res) {
 
 module.exports = {
     userSignUp: userSignUp,
-    userLogin: userLogin
+    userLogin: userLogin,
+    userLoggedIn: userLoggedIn
 }

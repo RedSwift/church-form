@@ -12,7 +12,10 @@ angular.module('churchForm')
                     email: this.email,
                     password: this.password
                 }
-                }).then(function () {
+                }).then(function (res) {
+                    console.log(res)
+                    $window.localStorage.email = ctrl.email
+                    $window.localStorage.auth_token = res.data.auth_token
                     $window.location.href = '/#/home'
                 }, function (err) {
                     if (err.message) alert('Error: ' + err.message)

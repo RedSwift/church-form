@@ -34,9 +34,9 @@ app.get('/', (req, res) => {
 app.post('/api/signup', userCtrl.userSignUp)
 app.post('/api/login', userCtrl.userLogin)
 
-app.post('/api/new', detailCtrl.newDetail)
-app.get('/api/details', detailCtrl.getDetail)
-app.get('/api/:id', detailCtrl.showDetail)
-app.put('/api/edit/:id', detailCtrl.editDetail)
-app.delete('/api/:id', detailCtrl.deleteDetail)
+app.post('/api/new', userCtrl.userLoggedIn, detailCtrl.newDetail)
+app.get('/api/details', userCtrl.userLoggedIn, detailCtrl.getDetail)
+app.get('/api/:id', userCtrl.userLoggedIn, detailCtrl.showDetail)
+app.put('/api/edit/:id', userCtrl.userLoggedIn, detailCtrl.editDetail)
+app.delete('/api/:id', userCtrl.userLoggedIn, detailCtrl.deleteDetail)
 

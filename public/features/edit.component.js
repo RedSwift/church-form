@@ -4,8 +4,19 @@ angular.module('churchForm')
   .component('editDetails', {
     templateUrl: 'features/edit.template.html',
     controller: function ($http, $routeParams, $window) {
+      if (!$window.localStorage.email || !$window.localStorage.auth_token) {
+        alert('You are not authorized for this page')
+        $window.location.href = '/'
+      }
       var ctrl = this
-      $http.get('/api/' + $routeParams.id)
+      $http({
+        method: 'GET',
+        url: '/api/' + $routeParams.id,
+        headers: {
+          email: $window.localStorage.email,
+          auth_token: $window.localStorage.auth_token
+        }
+      })
         .then(function (res) {
           var detail = res.data
           ctrl.membershipNo = detail.membershipNo
@@ -44,6 +55,10 @@ angular.module('churchForm')
         $http({
           method: 'PUT',
           url: '/api/edit/' + $routeParams.id,
+          headers: {
+            email: $window.localStorage.email,
+            auth_token: $window.localStorage.auth_token
+          },
           data: {
             membershipNo: ctrl.membershipNo,
             date: ctrl.date,

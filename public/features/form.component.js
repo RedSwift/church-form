@@ -3,11 +3,19 @@ angular.module('churchForm')
   .component('fullForm', {
     templateUrl: 'features/form.template.html',
     controller: function ($http, $window) {
+      if (!$window.localStorage.email || !$window.localStorage.auth_token) {
+        alert('You are not authorized for this page')
+        $window.location.href = '/'
+      }
       var ctrl = this
       this.submitForm = function () {
         $http({
           method: 'POST',
           url: '/api/new',
+          headers: {
+            email: $window.localStorage.email,
+            auth_token: $window.localStorage.auth_token
+          },
           data: {
             membershipNo: ctrl.membershipNo,
             date: ctrl.date,
