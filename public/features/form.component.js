@@ -3,11 +3,15 @@ angular.module('churchForm')
   .component('fullForm', {
     templateUrl: 'features/form.template.html',
     controller: function ($http, $window) {
-      if (!$window.localStorage.email || !$window.localStorage.auth_token) {
-        alert('You are not authorized for this page')
-        $window.location.href = '/'
-      }
       var ctrl = this
+      
+      $http.get('/api/login').then(null, function (err) {
+        if (err.data.error && err.status === 401) {
+          $window.location.href = "/"
+          return alert('You are not authorized for this page')
+        }
+      })
+      
       this.submitForm = function () {
         var formattedDate, formattedDob, formattedBaptismDate, formattedTransferDate
         if (ctrl.date) formattedDate = ctrl.date.toLocaleDateString()
@@ -57,7 +61,11 @@ angular.module('churchForm')
         }).then(function (res) {
           $window.location.href = '/#/home'
         }, function (err) {
-          alert('Save failed!', err)
+          if (err.data.error && err.status === 401) {
+            $window.location.href = '/'
+            return alert('You are not authorized for this page')
+          }
+          else alert('Unable to save details')
         })
       }
     }

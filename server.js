@@ -33,6 +33,7 @@ app.get('/', (req, res) => {
 
 app.post('/api/signup', userCtrl.userSignUp)
 app.post('/api/login', userCtrl.userLogin)
+app.get('/api/login', userCtrl.userLoggedIn)
 
 app.post('/api/new', userCtrl.userLoggedIn, detailCtrl.newDetail)
 app.get('/api/details', userCtrl.userLoggedIn, detailCtrl.getDetail)
