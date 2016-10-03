@@ -92,7 +92,7 @@ angular.module('churchForm')
             transferPastor: ctrl.transferPastor
           }
         }).then(function () {
-          $window.location.href = '/#/'
+          $window.location.href = '/#/home'
         })
       }
     }

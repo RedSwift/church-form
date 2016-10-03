@@ -9,6 +9,12 @@ angular.module('churchForm')
       }
       var ctrl = this
       this.submitForm = function () {
+        var formattedDate, formattedDob, formattedBaptismDate, formattedTransferDate
+        if (ctrl.date) formattedDate = ctrl.date.toLocaleDateString()
+        if (ctrl.dob) formattedDob = ctrl.dob.toLocaleDateString()
+        if (ctrl.baptismDate) formattedBaptismDate = ctrl.baptismDate.toLocaleDateString()
+        if (ctrl.transferDate) formattedTransferDate = ctrl.transferDate.toLocaleDateString()
+        
         $http({
           method: 'POST',
           url: '/api/new',
@@ -18,11 +24,11 @@ angular.module('churchForm')
           },
           data: {
             membershipNo: ctrl.membershipNo,
-            date: ctrl.date,
+            date: formattedDate || ctrl.date,
             chiName: ctrl.chiName,
             icNo: ctrl.icNo,
             engName: ctrl.engName,
-            dob: ctrl.dob,
+            dob: formattedDob || ctrl.dob,
             gender: ctrl.gender,
             bloodType: ctrl.bloodType,
             nationality: ctrl.nationality,
@@ -41,15 +47,15 @@ angular.module('churchForm')
             occupation: ctrl.occupation,
             familyReligion: ctrl.familyReligion,
             education: ctrl.education,
-            baptismDate: ctrl.baptismDate,
+            baptismDate: formattedBaptismDate || ctrl.baptismDate,
             baptismChurch: ctrl.baptismChurch,
             baptismPastor: ctrl.baptismPastor,
-            transferDate: ctrl.transferDate,
+            transferDate: formattedTransferDate || ctrl.transferDate,
             transferredFrom: ctrl.transferredFrom,
             transferPastor: ctrl.transferPastor
           }
         }).then(function (res) {
-          $window.location.href = '/#/'
+          $window.location.href = '/#/home'
         }, function (err) {
           alert('Save failed!', err)
         })

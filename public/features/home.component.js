@@ -26,7 +26,7 @@ angular.module('churchForm')
       ctrl.delete = function (id) {
           $http({
             method: 'DELETE',
-            url: '/api' + id,
+            url: '/api/' + id,
             headers: {
               email: $window.localStorage.email,
               auth_token: $window.localStorage.auth_token
